@@ -11,6 +11,7 @@ import Home from './Component/Home/Home';
 import Header from './Component/Header/Header';
 import Main from './Component/layout/Main';
 import Statistics from './Component/Statistics/Statistics';
+import ErrorPage from './Component/ErrorPage/ErrorPage';
 
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: 'statistics',
         element: <Statistics></Statistics>
+      },
+      {
+        path: '*',
+        element: <ErrorPage></ErrorPage>
       }
     ]
   }

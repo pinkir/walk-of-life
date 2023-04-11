@@ -12,6 +12,7 @@ import Header from './Component/Header/Header';
 import Main from './Component/layout/Main';
 import Statistics from './Component/Statistics/Statistics';
 import ErrorPage from './Component/ErrorPage/ErrorPage';
+import Blog from './Component/Blog/Blog';
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: '*',
         element: <ErrorPage></ErrorPage>
+      },
+      {
+        path: 'blog',
+        element: <Blog></Blog>
       }
     ]
   }

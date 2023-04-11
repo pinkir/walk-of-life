@@ -3,25 +3,25 @@
             "id": 1,
             "logo": "https://i.ibb.co/5YnxbNb/budget.png",
             "category": "Accounts & Finance",
-            "jobs": 10
+            "jobs": 100
         },
         {
             "id": 2,
             "logo": "https://i.ibb.co/VDxFCXV/bullhorn.png",
             "category": "Marketing & Sales",
-            "jobs": 5
+            "jobs": 154
         },
         {
             "id": 3,
             "logo": "https://i.ibb.co/SBkN8ZQ/design-thinking.png",
             "category": "Creative Design",
-            "jobs": 20
+            "jobs": 220
         },
         {
             "id": 4,
             "logo": "https://i.ibb.co/FskQzc1/engineer.png",
             "category": "Engineering Jobs",
-            "jobs": 15
+            "jobs": 315
         }
     ]
 

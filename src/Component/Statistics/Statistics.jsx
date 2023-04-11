@@ -44,23 +44,27 @@ const Statistics = () => {
             mark: 60
         }
     ]
+
+
+
     return (
         <div className='text-center'>
             <h2 className='text-4xl text-center font-bold relative -top-28'>Statistics</h2>
-            <AreaChart 
-            width={1000}
-            height={200}
-            data ={marks}
-            margin={{
-                top: 10,
-                right: 30,
-                left: 30,
-                bottom: 0,
-              }}>
-                <Area dataKey= "mark" stroke="blue"></Area>
-                <XAxis dataKey= "name" stroke="purple"></XAxis>
+            <AreaChart
+                width={1000}
+                height={200}
+                data={marks}
+                margin={{
+                    top: 10,
+                    right: 30,
+                    left: 30,
+                    bottom: 0,
+                }}>
+                <Area dataKey="mark" stroke="blue"></Area>
+                <XAxis dataKey="name" stroke="purple"></XAxis>
                 <YAxis stroke="purple"></YAxis>
                 <Tooltip></Tooltip>
+                
             </AreaChart>
         </div>
     );

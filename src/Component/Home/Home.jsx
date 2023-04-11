@@ -8,6 +8,20 @@ import Job from '../Job/Job';
 const Home = () => {
     const [categories , setCategories ] = useState([]);
     const jobs = useLoaderData();
+    const jobArray = jobs.slice(0, 4);
+
+    // -------
+    // const [jobsAll, setJobs] = useState([])
+    // const handleSeeMore = () =>{
+    //     const moreJobs = jobs;
+    //     console.log(jobs) 
+    //     setJobs(moreJobs)
+    // }
+    
+
+
+
+    // ------
 
     useEffect(()=>{
         fetch('category.json')
@@ -33,20 +47,23 @@ const Home = () => {
                         ></Category> )
                 }
                 </div>
+                
             </section>
             <section>
                 <h1 className='text-center text-4xl font-bold mt-60'>Featured Jobs</h1>
                 <p className='text-center  text-slate-500'>See the job List and apply for the one or more you think you can perform.</p>
-                <div className='grid grid-cols-2 gap-4 justify-items-center gap-x-0 p-10'>
+                <div className='grid md:grid-cols-2 gap-4 justify-items-center gap-x-0 p-10'>
                     {
-                        jobs.map(job => <Job 
+                        jobArray.map(job => <Job 
                             job = {job}
                             key = {job._id}
                         ></Job>)
                     }
 
                 </div>
+                <button className='content-center'>See more</button>
             </section>
+            
         </div>
     );
 };

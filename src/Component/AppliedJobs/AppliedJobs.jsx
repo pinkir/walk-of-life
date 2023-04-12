@@ -7,7 +7,8 @@ const AppliedJobs = () => {
     const jobCart = useLoaderData();
     console.log(jobCart)
     return (
-        <div>
+        <div className=''>
+            <h1 className='text-4xl text-center font-bold relative -top-28'>Applied Jobs</h1>
             {
                 jobCart.map(job => <Review
                 key = {job._id}

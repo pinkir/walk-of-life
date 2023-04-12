@@ -6,7 +6,7 @@ import vector from '../../All Images/Vector.png'
 const Header = () => {
     return (
         <nav className=' bg-gray-100'>
-            <section className='flex justify-between p-5'>
+            <section className=' flex-col-1 md:flex justify-between p-5'>
             <h3 className='text-blue-400 font-bold text-3xl name '>PathOFlife</h3>
             <div className=''>
             <Link className='m-3' to='/'>Home</Link>

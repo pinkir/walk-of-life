@@ -17,7 +17,7 @@ const Home = () => {
     //     console.log(jobs) 
     //     setJobs(moreJobs)
     // }
-    
+
 
 
 
@@ -30,7 +30,7 @@ const Home = () => {
     },[])
     return (
         <div>
-            <section className='flex justify-around gap-0 pl-10 pr-10 bg-gray-100 relative -top-48 '>
+            <section className='flex-col-1 md:flex justify-around gap-0 pl-10 pr-10 bg-gray-100 relative -top-48 '>
                 <h2 className='text-5xl font-bold pt-10'>One step <br /> closer to your <br /><span className='text-violet-400 text-right'>Path of Life</span> <p className='text-xl font-thin text-slate-500 pt-3'>Consider taking on internships or job shadowing opportunities <br /> to gain practical experience in different fields. <br /> This can help you make informed decisions about your career path.</p> <button className='text-xl'>Get Started</button> </h2>
 
                 <img className='h-96' src={person} alt="" />
@@ -39,7 +39,7 @@ const Home = () => {
             <section>
             <h1 className='text-center text-4xl font-bold mb-3'>Job Category List</h1>
             <p className='text-center  text-slate-500'>Here are the category of jobs where you can find yours!!!</p>
-                <div className='flex justify-center gap-5 mt-3'>
+                <div className='flex-col-1 md:flex justify-center gap-5 mt-3'>
                 {
                     categories.map(category => <Category 
                         category ={category}
@@ -52,15 +52,18 @@ const Home = () => {
             <section>
                 <h1 className='text-center text-4xl font-bold mt-60'>Featured Jobs</h1>
                 <p className='text-center  text-slate-500'>See the job List and apply for the one or more you think you can perform.</p>
-                <div className='grid md:grid-cols-2 gap-4 justify-items-center gap-x-0 p-10'>
+                <div className='grid md:grid-cols-2 gap-4 justify-items-center gap-x-0 pt-10'>
                     {
                         jobArray.map(job => <Job 
                             job = {job}
                             key = {job._id}
+                            
                         ></Job>)
                     }
                 </div>
+                
             </section>
+            <div className='ml-48 mb-5'><button className='ml-0 md:ml-96'>See More</button></div>
             
             
             

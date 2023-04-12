@@ -59,10 +59,10 @@ const Home = () => {
                             key = {job._id}
                         ></Job>)
                     }
-
                 </div>
-                <button className='content-center'>See more</button>
             </section>
+            
+            
             
         </div>
     );

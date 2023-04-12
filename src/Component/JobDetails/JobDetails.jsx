@@ -2,20 +2,52 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams, useSearchParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faSackDollar, faCalendar, faPhone, faMailReply } from '@fortawesome/free-solid-svg-icons'
+import { addToDb, getShoppingCart } from '../../utilities/fakedb'
 
 const JobDetails = () => {
     const [state, setState] = useState([])
     const details = useLoaderData();
-    console.log(details);
-    const {id} = useParams();
-    console.log(id);
+    // console.log(details);
+
+    // ///
+
+    const [cart, setCart] = useState([]);
+    // /////
+
+
+    const { id } = useParams();
+    // console.log(id);
     useEffect(() => {
-        if(details){
+        if (details) {
             const detailsData = details.find(dt => dt._id == id);
             setState(detailsData)
         }
-        
-    },[])
+
+    }, [])
+
+    useEffect(() => {
+        const storedCart = getShoppingCart();
+        const savedJob =[];
+        for (const id in storedCart) {
+            const addedJob = details.find(dt => dt._id == id)
+            if (addedJob) {
+                const quantity = storedCart[id];
+                addedJob.quantity = quantity;
+                savedJob.push(addedJob);
+            }
+            console.log(savedJob)
+
+
+        }
+        setCart(savedJob)
+    }, [details])
+
+
+    const handleAddToCart = (_id) => {
+        const newCart = [...cart, state]
+        setCart(newCart);
+        addToDb(state._id)
+    }
     return (
         <div>
             <h1 className='text-4xl text-center font-bold relative -top-28'>Job Details</h1>
@@ -36,7 +68,7 @@ const JobDetails = () => {
                     <p><FontAwesomeIcon icon={faPhone} /> Phone: {state.phone}</p>
                     <p><FontAwesomeIcon icon={faMailReply} /> Email: {state.email}</p>
                     <p><FontAwesomeIcon icon={faLocationDot} /> Address: {state.location}</p>
-                    <button className='mt-5'>APPLY NOW</button>
+                    <button onClick={() => handleAddToCart()} className='mt-5'>APPLY NOW</button>
 
                 </div>
             </div>

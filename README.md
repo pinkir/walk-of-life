@@ -1,4 +1,4 @@
-### walk-of-life
+### Path-of-life
 features of my project:
 
 * There is a Navber on the top of my project containing a brand name some navigation options and a button.

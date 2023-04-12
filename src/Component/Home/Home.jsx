@@ -11,12 +11,12 @@ const Home = () => {
     const jobArray = jobs.slice(0, 4);
 
     // -------
-    // const [jobsAll, setJobs] = useState([])
-    // const handleSeeMore = () =>{
-    //     const moreJobs = jobs;
-    //     console.log(jobs) 
-    //     setJobs(moreJobs)
-    // }
+    const [jobsAll, setJobs] = useState(jobArray)
+    const handleSeeMore = () =>{
+        const moreJobs = jobs;
+        console.log(moreJobs) 
+        setJobs(moreJobs)
+    }
 
 
 
@@ -54,16 +54,17 @@ const Home = () => {
                 <p className='text-center  text-slate-500'>See the job List and apply for the one or more you think you can perform.</p>
                 <div className='grid md:grid-cols-2 gap-4 justify-items-center gap-x-0 pt-10'>
                     {
-                        jobArray.map(job => <Job 
+                        jobsAll.map(job => <Job 
                             job = {job}
                             key = {job._id}
+                            
                             
                         ></Job>)
                     }
                 </div>
                 
             </section>
-            <div className='ml-48 mb-5'><button className='ml-0 md:ml-96'>See More</button></div>
+            <div className='ml-48 mb-5'><button onClick={()=>handleSeeMore()} className='ml-0 md:ml-96'>See More</button></div>
             
             
             
